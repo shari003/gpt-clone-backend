@@ -52,8 +52,11 @@ app.post("/completions", async(req, res) => {
 })
 
 
-app.get("*", (req, res) => {
-    res.send("Hey welcome to ConvoBot page !!");
+app.use("*", (req, res) => {
+    res.status(200).json({
+        success: true,
+        message: "Hello, Welcome to ConvoBOT"
+    })
 });
 
 app.listen(PORT, console.log("Server started at PORT: " + PORT));
