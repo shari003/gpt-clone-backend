@@ -34,6 +34,7 @@ app.post("/completions", async(req, res) => {
                 role: 'user',
                 content: message
             }],
+            max_tokens: 100
         })
     }
 
